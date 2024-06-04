@@ -2,7 +2,7 @@ from tkinter import *
 
 # define class App
 class App(Tk):
-    def __init__(self):
+    def __init__(self): # constructor for App
         super().__init__()
         
         self.title("Assessement 4")
@@ -12,10 +12,10 @@ class App(Tk):
         ass4_frame.show_frame()
     
 class Ass4_Frame(Frame):
-    def __init__(self, parent):
+    def __init__(self, parent): # constructor for frame
         super().__init__(parent)
         
-    def show_frame(self):
+    def show_frame(self): # method to create buttons and textboxes
         self.pack(pady=20)
         
         self.print_all = Button(self, text="Print All", font="Helvetica")
@@ -28,9 +28,9 @@ class Ass4_Frame(Frame):
         self.range_date = Label(self, text="Date Range").grid(row=5, column = 0, pady=10, padx= 10)
         
         # create text boxes
-        self.text_date = Text(self, height = 2, width = 10).grid(row=4, column=1, pady=10, padx= 10)
-        self.text_startDate = Text(self, height = 2, width = 10).grid(row=5, column = 1, pady=10, padx= 10)
-        self.text_endDate = Text(self, height = 2, width = 10).grid(row=5, column = 2, pady=10, padx= 10)
+        self.text_date = Entry(self, height = 2, width = 10).grid(row=4, column=1, pady=10, padx= 10)
+        self.text_startDate = Entry(self, height = 2, width = 10).grid(row=5, column = 1, pady=10, padx= 10)
+        self.text_endDate = Entry(self, height = 2, width = 10).grid(row=5, column = 2, pady=10, padx= 10)
         
         
         # lay the buttons within the frame
