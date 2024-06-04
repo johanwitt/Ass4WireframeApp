@@ -1,4 +1,5 @@
 from tkinter import *
+import backend as bkend
 
 # define class App
 class App(Tk):
@@ -18,8 +19,8 @@ class Ass4_Frame(Frame):
     def show_frame(self): # method to create buttons and textboxes
         self.pack(pady=20)
         
-        self.print_all = Button(self, text="Print All", font="Helvetica")
-        self.pos_growth = Button(self, text="+ Growth", font="Helvetica")
+        self.print_all = Button(self, text="Print All", font="Helvetica", command=bkend.backend.print_all)
+        self.pos_growth = Button(self, text="+ Growth", font="Helvetica", command=bkend.backend.pos_growth)
         self.filt_by_date = Button(self, text="By Date", font="Helvetica")
         self.date_range = Button(self, text="By Date Range", font="Helvetica")
         
@@ -28,9 +29,9 @@ class Ass4_Frame(Frame):
         self.range_date = Label(self, text="Date Range").grid(row=5, column = 0, pady=10, padx= 10)
         
         # create text boxes
-        self.text_date = Entry(self, height = 2, width = 10).grid(row=4, column=1, pady=10, padx= 10)
-        self.text_startDate = Entry(self, height = 2, width = 10).grid(row=5, column = 1, pady=10, padx= 10)
-        self.text_endDate = Entry(self, height = 2, width = 10).grid(row=5, column = 2, pady=10, padx= 10)
+        self.text_date = Entry(self).grid(row=4, column=1, pady=10, padx= 10)
+        self.text_startDate = Entry(self).grid(row=5, column = 1, pady=10, padx= 10)
+        self.text_endDate = Entry(self).grid(row=5, column = 2, pady=10, padx= 10)
         
         
         # lay the buttons within the frame
